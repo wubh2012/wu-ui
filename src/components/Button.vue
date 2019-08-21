@@ -1,9 +1,6 @@
 <template>
   <button class="w-button" :class="[type? 'w-button--'+type : '', {'icon-right': iconPosition === 'right'}]">
-
-    <svg class="icon" aria-hidden="true" v-if="!!icon">
-        <use :xlink:href="`#${icon}`"></use>
-    </svg>
+    <w-icon v-if="!!icon" :name="icon" class="icon"></w-icon>    
     <div class="content">
       <slot></slot>
     </div>
