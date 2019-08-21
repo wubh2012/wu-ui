@@ -5,14 +5,28 @@
 </template>
 <script>
 export default {
-  name: "w-button-group"
+  name: "w-button-group",
+  mounted(){
+    // console.log('当前包含的子组件', typeof this.$children, this.$children)
+    // console.log('当前元素', this.$el)
+    for (const node of this.$el.children) {
+      let nodeName = node.nodeName;
+      // console.log(nodeName)
+      if(nodeName.toUpperCase() !== 'BUTTON'){
+        //eslint-disable-next-line
+        console.warn(`w-button-group 的子元素只允许出现 w-button, 但你写的是 ${nodeName}`);
+      }
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
 .w-button-group {
   .w-button {
-    border-radius: 0;
-    margin-left: -1px;
+    border-radius: 0;    
+    &:not(:first-child){
+      margin-left: -1px;
+    }
     &:hover {
       position: relative;
       z-index: 1;
