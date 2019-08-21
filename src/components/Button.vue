@@ -1,7 +1,9 @@
 <template>
-  <button class="w-button" :class="[type? 'w-button--'+type : '', {'icon-right': iconPosition === 'right'}]">
+  <button class="w-button" 
+    :class="[type? 'w-button--'+type : '', {'icon-right': iconPosition === 'right'}]" 
+    @click="$emit('click')">
     <w-icon v-if="!!icon && !loading" :name="icon" class="icon"></w-icon>
-    <w-icon v-if="loading" :name="icon" class="icon loading"></w-icon>
+    <w-icon v-if="loading" name="w-icon-loading" class="icon loading"></w-icon>
     <div class="content">
       <slot></slot>
     </div>

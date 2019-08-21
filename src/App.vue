@@ -15,17 +15,21 @@
       <w-button icon="w-icon-delete">删除</w-button>
       <w-button icon="w-icon-download">下载</w-button>
       <w-button icon="w-icon-loading">加载</w-button>
-      
     </div>
     <div id="demo">
-      <w-button icon="w-icon-loading" :loading="true">加载中</w-button>         
+      <w-button :loading="loading" @click="loading = !loading">点击显示加载效果</w-button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
+  data() {
+    return {
+      loading: false
+    };
+  }
 };
 </script>
 
