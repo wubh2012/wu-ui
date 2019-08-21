@@ -1,8 +1,12 @@
 <template>
-  <button class="w-button" :class="[
-    type? 'w-button--'+type : ''
-  ]">
-    <slot></slot>
+  <button class="w-button" :class="[type? 'w-button--'+type : '', {'icon-right': iconPosition === 'right'}]">
+
+    <svg class="icon" aria-hidden="true" v-if="!!icon">
+        <use :xlink:href="`#${icon}`"></use>
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
   </button>
 </template>
 
@@ -12,7 +16,22 @@ export default {
   props: {
     type: {
       type: String,
-      default: "default"
+      default: "default",
+      validator: function(value){
+        return ['default', 'primary', 'info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
+      }
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator: function(value){
+        // 这个值必须匹配下列字符串中的一个
+        return ['left', 'right'].indexOf(value) !== -1
+      }
     }
   },
   data() {
@@ -29,9 +48,13 @@ $color: #333;
 $border-color: #dcdfe6;
 $border-radius: 4px;
 .w-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: var(--font-size);
   height: $button-height;
   padding: 0 1em;
+  vertical-align: middle;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   background: $button-bg;
@@ -47,6 +70,25 @@ $border-radius: 4px;
     color: #3a8ee6;
     border-color: #3a8ee6;
     outline: none;
+  }
+
+  > .icon{
+    order: 1;
+    margin-right: .3em;
+  }
+  > .content{
+    order: 2;
+  }
+
+  &.icon-right{
+    > .icon{
+      order: 2;
+      margin-right: 0;
+      margin-left: .3em;
+    }
+    > .content{
+      order: 1;
+    }
   }
 
   &--primary {

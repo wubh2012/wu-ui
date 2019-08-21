@@ -8,6 +8,25 @@
       <w-button type="warning">警告按钮</w-button>
       <w-button type="danger">危险按钮</w-button>
     </div>
+    <div id="demo">
+      <w-button icon="icon-setting">设置</w-button>
+      <w-button icon="icon-add" iconPosition="left">添加</w-button>
+      <w-button icon="icon-edit" iconPosition="right">编辑</w-button>
+      <w-button icon="icon-delete">删除</w-button>
+      <w-button icon="icon-download">下载</w-button>
+      <w-button icon="icon-loading">加载中...</w-button>
+    </div>
+    <div id="demo">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-add"></use>
+      </svg>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-edit"></use>
+      </svg>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-delete"></use>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -41,6 +60,7 @@ body {
   margin-top: 60px;
 }
 #demo {
+  margin: 10px;
   .w-button + .w-button {
     margin-left: 10px;
   }
