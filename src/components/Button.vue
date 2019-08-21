@@ -64,7 +64,7 @@ $border-radius: 4px;
   padding: 0 1em;
   vertical-align: middle;
   border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   background: $button-bg;
   outline: none;
   transition: 0.1s;

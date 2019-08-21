@@ -19,6 +19,14 @@
     <div id="demo">
       <w-button :loading="loading" @click="loading = !loading">点击显示加载效果</w-button>
     </div>
+    <div id="demo1">
+      <w-button-group>
+        <w-button icon="w-icon-left">上一页</w-button>
+        <w-button>第1页</w-button>
+        <w-button>第2页</w-button>
+        <w-button icon="w-icon-right" iconPosition="right">下一页</w-button>
+      </w-button-group>
+    </div>
   </div>
 </template>
 
@@ -42,6 +50,7 @@ export default {
 :root {
   --font-size: 14px;
   --color: #333;
+  --border-radius: 4px;
 }
 body {
   font-size: var(--font-size);
