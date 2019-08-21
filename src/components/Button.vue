@@ -1,6 +1,7 @@
 <template>
   <button class="w-button" :class="[type? 'w-button--'+type : '', {'icon-right': iconPosition === 'right'}]">
-    <w-icon v-if="!!icon" :name="icon" class="icon"></w-icon>    
+    <w-icon v-if="!!icon && !loading" :name="icon" class="icon"></w-icon>
+    <w-icon v-if="loading" :name="icon" class="icon loading"></w-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -17,6 +18,10 @@ export default {
       validator: function(value){
         return ['default', 'primary', 'info', 'success', 'danger', 'warning'].indexOf(value) !== -1;
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
     icon: {
       type: String,
@@ -44,6 +49,10 @@ $button-active-bg: #eee;
 $color: #333;
 $border-color: #dcdfe6;
 $border-radius: 4px;
+@keyframes spin {
+  0%{ transform: rotate(0deg)}
+  100% { transform: rotate(360deg)}
+}
 .w-button {
   display: inline-flex;
   justify-content: center;
@@ -68,24 +77,15 @@ $border-radius: 4px;
     border-color: #3a8ee6;
     outline: none;
   }
-
-  > .icon{
-    order: 1;
-    margin-right: .3em;
+  .loading{
+    animation: spin 2s linear infinite;
   }
-  > .content{
-    order: 2;
-  }
+  > .icon{ order: 1; margin-right: .3em; }
+  > .content{ order: 2; }
 
   &.icon-right{
-    > .icon{
-      order: 2;
-      margin-right: 0;
-      margin-left: .3em;
-    }
-    > .content{
-      order: 1;
-    }
+    > .icon{ order: 2; margin-right: 0; margin-left: .3em; }
+    > .content{ order: 1; }
   }
 
   &--primary {

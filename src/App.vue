@@ -9,17 +9,16 @@
       <w-button type="danger">危险按钮</w-button>
     </div>
     <div id="demo">
-      <w-button icon="w-setting">设置</w-button>
-      <w-button icon="w-add" iconPosition="left">添加</w-button>
-      <w-button icon="w-edit" iconPosition="right">编辑</w-button>
-      <w-button icon="w-delete">删除</w-button>
-      <w-button icon="w-download">下载</w-button>
-      <w-button icon="w-loading">加载中...</w-button>
+      <w-button icon="w-icon-setting">设置</w-button>
+      <w-button icon="w-icon-add" iconPosition="left">添加</w-button>
+      <w-button icon="w-icon-edit" iconPosition="right">编辑</w-button>
+      <w-button icon="w-icon-delete">删除</w-button>
+      <w-button icon="w-icon-download">下载</w-button>
+      <w-button icon="w-icon-loading">加载</w-button>
+      
     </div>
     <div id="demo">
-      <w-icon name="w-add"></w-icon>
-      <w-icon name="w-edit"></w-icon>
-      <w-icon name="w-delete"></w-icon>      
+      <w-button icon="w-icon-loading" :loading="true">加载中</w-button>         
     </div>
   </div>
 </template>
