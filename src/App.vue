@@ -42,18 +42,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/styles/var.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  --font-size: 14px;
-  --color: #333;
-  --border-radius: 4px;
-}
+
 body {
-  font-size: var(--font-size);
+  font-size: $font-size;
 }
 #app {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",

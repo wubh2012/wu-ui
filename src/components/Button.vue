@@ -45,26 +45,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/var.scss";
 $button-height: 32px;
 $button-bg: white;
 $button-active-bg: #eee;
-$color: #333;
-$border-color: #dcdfe6;
-$border-radius: 4px;
+$button-primary:#409eff;
+$button-primary-hover: lighten($button-primary, 10%);
+$button-primary-active: darken($button-primary, 10%);
+$button-success: #67c23a;
+$button-success-hover: lighten($button-success, 10%);
+$button-success-active: darken($button-success, 10%);
+$button-info: #909399;
+$button-info-hover: lighten($button-info, 10%);
+$button-info-active: darken($button-info, 10%);
+$button-warning: #e6a23c;
+$button-warning-hover: lighten($button-warning, 10%);
+$button-warning-active: darken($button-warning, 10%);
+$button-danger: #f56c6c;
+$button-danger-hover: lighten($button-danger, 10%);
+$button-danger-active: darken($button-danger, 10%);
+
 @keyframes spin {
   0%{ transform: rotate(0deg)}
   100% { transform: rotate(360deg)}
 }
+
 .w-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: var(--font-size);
+  font-size: $font-size;
   height: $button-height;
   padding: 0 1em;
   vertical-align: middle;
   border: 1px solid $border-color;
-  border-radius: var(--border-radius);
+  border-radius: $border-radius;
   background: $button-bg;
   outline: none;
   transition: 0.1s;
@@ -92,81 +107,81 @@ $border-radius: 4px;
 
   &--primary {
     color: #fff;
-    background-color: #409eff;
-    border-color: #409eff;
+    background-color: $button-primary;
+    border-color: $button-primary;
     &:hover,
     &:focus {
       color: #fff;
-      background: #66b1ff;
-      border-color: #66b1ff;
+      background: $button-primary-hover;
+      border-color: $button-primary-hover;
     }
     &:active {
       color: #fff;
-      background: #3a8ee6;
-      border-color: #3a8ee6;
+      background: $button-primary-active;
+      border-color: $button-primary-active;
     }
   }
   &--success {
     color: #fff;
-    background-color: #67c23a;
-    border-color: #67c23a;
+    background-color: $button-success;
+    border-color: $button-success;
     &:hover,
     &:focus {
-      background: #85ce61;
-      border-color: #85ce61;
+      background: $button-success-hover;
+      border-color: $button-success-hover;
       color: #fff;
     }
     &:active {
-      background: #5daf34;
-      border-color: #5daf34;
+      background: $button-success-active;
+      border-color: $button-success-active;
       color: #fff;
     }
   }
   &--info {
     color: #fff;
-    background-color: #909399;
-    border-color: #909399;
+    background-color: $button-info;
+    border-color: $button-info;
     &:hover,
     &:focus {
-      background: #a6a9ad;
-      border-color: #a6a9ad;
+      background: $button-info-hover;
+      border-color: $button-info-hover;
       color: #fff;
     }
     &:active {
-      background: #82848a;
-      border-color: #82848a;
+      background: $button-info-active;
+      border-color: $button-info-active;
       color: #fff;
     }
   }
   &--warning {
     color: #fff;
-    background-color: #e6a23c;
-    border-color: #e6a23c;
+    background-color: $button-warning;
+    border-color: $button-warning;
     &:hover,
     &:focus {
-      background: #ebb563;
-      border-color: #ebb563;
+      background: $button-warning-hover;
+      border-color: $button-warning-hover;
       color: #fff;
     }
     &:active {
-      background: #cf9236;
-      border-color: #cf9236;
+      background: $button-warning-active;
+      border-color: $button-warning-active;
       color: #fff;
     }
   }
   &--danger {
     color: #fff;
-    background-color: #f56c6c;
-    border-color: #f56c6c;
+    background-color: $button-danger;
+    border-color: $button-danger;
     &:hover,
     &:focus {
-      background: #f78989;
-      border-color: #f78989;
+      background: $button-danger-hover;
+      border-color: $button-danger-hover;
       color: #fff;
     }
     &:active {
-      background: #dd6161;
-      border-color: #dd6161;
+      background: $button-danger-active;
+      border-color: $button-danger-active;
       color: #fff;
     }
   }
