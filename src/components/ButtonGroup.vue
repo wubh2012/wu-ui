@@ -13,7 +13,6 @@ export default {
       let nodeName = node.nodeName;
       // console.log(nodeName)
       if(nodeName.toUpperCase() !== 'BUTTON'){
-        //eslint-disable-next-line
         console.warn(`w-button-group 的子元素只允许出现 w-button, 但你写的是 ${nodeName}`);
       }
     }
@@ -21,7 +20,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
+@import "@/styles/_var.scss";
 .w-button-group {
   .w-button {
     border-radius: 0;    

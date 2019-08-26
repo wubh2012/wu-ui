@@ -27,6 +27,7 @@
         <w-button icon="w-icon-right" iconPosition="right">下一页</w-button>
       </w-button-group>
     </div>
+    <div id="test"></div>
   </div>
 </template>
 
@@ -42,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/styles/var.scss";
+@import "@/styles/_var.scss";
 * {
   margin: 0;
   padding: 0;

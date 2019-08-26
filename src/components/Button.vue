@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/var.scss";
+@import "@/styles/_var.scss";
 $button-height: 32px;
 $button-bg: white;
 $button-active-bg: #eee;
